@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Retro Leaderboard</title>
+    <style>
+      html,
+      body,
+      .container {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .button {
+        background-color: #4caf50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+      .button2 {
+        background-color: #008cba;
+      } /* Blue */
+      .button3 {
+        background-color: #f44336;
+      } /* Red */
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <canvas id="leaderboard" width="400" height="400"></canvas>
+      <div class="inner-container">
+        <button class="button" onclick="updateScores('Jane')">Jane</button>
+        <button class="button button2" onclick="updateScores('Joe')">Joe</button>
+        <button class="button button3" onclick="updateScores('Terry')">Terry</button>
+      </div>
+    </div>
+    <script>
+      let scores = [
+        {
+          name: 'Player 1',
+          score: 300,
+        },
+        {
+          name: 'Player 2',
+          score: 200,
+        },
+        {
+          name: 'Player 3',
+          score: 100,
+        },
+      ];
+      const canvas = document.getElementById('leaderboard');
+      const ctx = canvas.getContext('2d');
+
+      // Step 3: Draw the background of the leaderboard
+      ctx.fillStyle = '#000000';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Step 4: Draw the leaderboard title
+      ctx.fillStyle = '#ffffff';
+      ctx.font = '30px Arial';
+      const leaderboardText = 'LEADERBOARD';
+      const leaderboardTextWidth = ctx.measureText(leaderboardText).width;
+      const leaderboardX = (canvas.width - leaderboardTextWidth) / 2;
+      ctx.fillText(leaderboardText, leaderboardX, 50);
+
+      // Step 5: Draw the scores
+      function drawScores() {
+        // re-draw black background
+        ctx.fillStyle = '#000000';
+        ctx.fillRect(0, 100, canvas.width, canvas.height);
+
+        ctx.fillStyle = '#ff0000';
+        ctx.font = '20px Arial';
+        const player1ScoreText = `1. ${scores[0].name} - ${scores[0].score}`;
+        const player2ScoreText = `2. ${scores[1].name} - ${scores[1].score}`;
+        const player3ScoreText = `3. ${scores[2].name} - ${scores[2].score}`;
+        const player1ScoreWidth = ctx.measureText(player1ScoreText).width;
+        const player2ScoreWidth = ctx.measureText(player2ScoreText).width;
+        const player3ScoreWidth = ctx.measureText(player3ScoreText).width;
+        const playerScoreX = (canvas.width - Math.max(player1ScoreWidth, player2ScoreWidth, player3ScoreWidth)) / 2;
+        ctx.fillText(player1ScoreText, playerScoreX, 120);
+        ctx.fillStyle = '#ffff00';
+        ctx.fillText(player2ScoreText, playerScoreX, 160);
+        ctx.fillStyle = '#00ff00';
+        ctx.fillText(player3ScoreText, playerScoreX, 200);
+      }
+
+      function updateScores(playerName) {
+        const lowScoreObject = scores.pop();
+        lowScoreObject.name = playerName;
+        lowScoreObject.score += 300;
+        scores.unshift(lowScoreObject);
+        drawScores();
+      }
+
+      drawScores();
+    </script>
+  </body>
+</html>
