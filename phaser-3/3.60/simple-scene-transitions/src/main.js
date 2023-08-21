@@ -9,7 +9,9 @@ class Scene1 extends Phaser.Scene {
     this.add.rectangle(100, 100, 600, 400, 0x0000ff, 0.4).setOrigin(0);
 
     this.input.keyboard.once('keydown-SPACE', () => {
-      this.cameras.main.fadeOut(1000, 0, 0, 0);
+      this.cameras.main.fadeOut(1000, 0, 0, 0, (camera, progress) => {
+        console.log(progress);
+      });
     });
 
     this.cameras.main.once(
