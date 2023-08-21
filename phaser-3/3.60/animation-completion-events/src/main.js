@@ -65,6 +65,7 @@ class MainScene extends Phaser.Scene {
     // const mask = new Phaser.Display.Masks.BitmapMask(this, maskGraphics);
     // mask.invertAlpha = true;
     // overlay.setMask(mask);
+    // https://labs.phaser.io/edit.html?src=src/textures\crop%20texture%20image.js
   }
 
   update() {
