@@ -11,17 +11,11 @@ class Scene1 extends Phaser.Scene {
     this.input.keyboard.once('keydown-SPACE', () => {
       this.cameras.main.fadeOut(1000, 0, 0, 0, (camera, progress) => {
         console.log(progress);
+        if (progress === 1) {
+          this.scene.start(Scene2.name);
+        }
       });
     });
-
-    this.cameras.main.once(
-      Phaser.Cameras.Scene2D.Events.FADE_OUT_COMPLETE,
-      () => {
-        this.scene.start(Scene2.name);
-      }
-    );
-
-    this.cameras.main.fadeIn(1000, 0, 0, 0);
   }
 }
 
