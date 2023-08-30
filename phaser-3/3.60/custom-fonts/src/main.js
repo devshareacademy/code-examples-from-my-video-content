@@ -9,24 +9,36 @@ class MainScene extends Phaser.Scene {
   preload() {}
 
   create() {
-    const text = this.add.text(
-      50,
-      50,
-      'The face of the\nmoon was in\nshadow.',
-      {
+    const w = this.scale.width / 2;
+    this.add
+      .text(w, 100, 'Default Font Family', {
+        fontSize: 32,
+        color: '#ffffff',
+      })
+      .setOrigin(0.5);
+    const text = this.add
+      .text(w, 200, 'Press Start 2P', {
+        fontSize: 32,
+        color: '#ffffff',
+      })
+      .setOrigin(0.5);
+    const text2 = this.add
+      .text(w, 300, 'Kenny Future Narrow', {
         fontSize: 40,
         color: '#ffffff',
-      }
-    );
+      })
+      .setOrigin(0.5);
 
     WebFontLoader.default.load({
       google: {
         families: ['Press Start 2P'],
       },
+      custom: {
+        families: ['Kenney-Future-Narrow'],
+      },
       active: () => {
-        setTimeout(() => {
-          text.setFontFamily('"Press Start 2P"').setColor('#ffffff');
-        }, 1500);
+        text.setFontFamily('"Press Start 2P"').setColor('#ffffff');
+        text2.setFontFamily('Kenney-Future-Narrow').setColor('#ffffff');
       },
     });
   }
