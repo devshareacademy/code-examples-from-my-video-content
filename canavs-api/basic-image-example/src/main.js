@@ -1,4 +1,4 @@
-import { encodedImage } from './encoded-image';
+import { encodedImage } from './encoded-image.js';
 
 /**
  * @param {string} src
