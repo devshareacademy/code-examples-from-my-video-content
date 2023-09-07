@@ -8,3 +8,7 @@ TODO
 
 Link to live demo:
 TODO
+
+## Credit
+
+The custom fonts that were used in this demo were created by [Kenney](https://www.kenney.nl/assets/kenney-fonts).

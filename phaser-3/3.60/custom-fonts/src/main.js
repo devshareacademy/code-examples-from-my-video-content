@@ -12,13 +12,13 @@ class MainScene extends Phaser.Scene {
     const w = this.scale.width / 2;
     this.add
       .text(w, 100, 'Default Font Family', {
-        fontSize: 32,
+        fontSize: 40,
         color: '#ffffff',
       })
       .setOrigin(0.5);
     const text = this.add
       .text(w, 200, 'Press Start 2P', {
-        fontSize: 32,
+        fontSize: 40,
         color: '#ffffff',
       })
       .setOrigin(0.5);
