@@ -1,3 +1,40 @@
+import { encodedImage } from './encoded-image.js';
+
+/**
+ * @param {string} src
+ * @returns {Promise<HTMLImageElement>}
+ */
+function loadImage(src) {
+  return new Promise((resolve) => {
+    const img = new Image();
+    img.addEventListener(
+      'load',
+      () => {
+        resolve(img);
+      },
+      false
+    );
+    img.src = src;
+  });
+}
+
+/**
+ * @returns {Promise<HTMLImageElement>}
+ */
+function getEncodedImage() {
+  return new Promise((resolve) => {
+    const img = new Image();
+    img.addEventListener(
+      'load',
+      () => {
+        resolve(img);
+      },
+      false
+    );
+    img.src = encodedImage;
+  });
+}
+
 void (async function () {
   const canvas = document.getElementById('game');
   if (!(canvas instanceof HTMLCanvasElement)) {
@@ -10,5 +47,18 @@ void (async function () {
     return;
   }
 
-  // TODO: add main logic
+  const img = await loadImage('assets/grunge-tileset.png');
+  // const img = await getEncodedImage();
+
+  // example of drawing image directly
+  // drawImage(image, dx, dy)
+  ctx.drawImage(img, 0, 0);
+
+  // example of scaling by providing width and height on destination
+  // drawImage(image, dx, dy, dWidth, dHeight)
+  // ctx.drawImage(img, 0, 0, img.width * 1.5, img.height * 1.5);
+
+  // example of slicing image by providing the source image values and destination canvas details
+  // drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight)
+  // ctx.drawImage(img, 200, 0, 200, 160, 100, 0, 200, 160);
 })();
