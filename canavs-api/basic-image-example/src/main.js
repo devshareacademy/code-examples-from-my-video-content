@@ -49,7 +49,7 @@ void (async function () {
 
   const img = await loadImage('assets/grunge-tileset.png');
   // const img = await getEncodedImage();
-  console.log(img.width, img.height);
+
   // example of drawing image directly
   // drawImage(image, dx, dy)
   ctx.drawImage(img, 0, 0);
