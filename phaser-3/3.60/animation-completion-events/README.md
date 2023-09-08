@@ -8,3 +8,7 @@ TODO
 
 Link to live demo:
 TODO
+
+## Credit
+
+The spritesheet that was used in this demo were created by [Essssam](https://essssam.itch.io/rocky-roads).
