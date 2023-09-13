@@ -7,7 +7,7 @@ For a detailed walkthrough, checkout my video on YouTube here:
 TODO
 
 Link to live demo:
-TODO
+[Animation Completion Event Demo](https://devshareacademy.github.io/code-examples-from-my-video-content/phaser-3/animation-completion-events/index.html)
 
 ## Credit
 
