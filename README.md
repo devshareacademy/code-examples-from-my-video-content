@@ -4,6 +4,10 @@ Contains various code examples that are used in my shared video content on YouTu
 
 Each sub project includes a `README.md` file that has more details on that particular project.
 
+## Demo
+
+To view the available demos, please go here: [Examples](https://devshareacademy.github.io/code-examples-from-my-video-content/)
+
 ## Issues
 
 For any issues you encounter, please open a new [GitHub Issue](https://github.com/devshareacademy/code-examples-from-my-video-content/issues) on this project.
