@@ -1,10 +1,13 @@
 # Canvas API - Working With Images
 
+![demo](docs/example.png)
+
 A quick demo of how you can draw and work with image data when drawing images to your HTML `<canvas>` element.
 
 For a detailed walkthrough, checkout my video on YouTube here:
 
-TODO
+[<img src="https://i.ytimg.com/vi/PJM8isAuDoI/hqdefault.jpg">](https://youtu.be/PJM8isAuDoI "How to Draw, Scale, and Slice Images using the Canvas API")
 
 Link to live demo:
-TODO
+
+[Demo](https://devshareacademy.github.io/code-examples-from-my-video-content/canavs-api/basic-image-example/index.html)
