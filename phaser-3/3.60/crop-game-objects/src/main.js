@@ -19,6 +19,7 @@ class MainScene extends Phaser.Scene {
   }
 
   create() {
+    // create basic animations from the spritesheet
     this.anims.create({
       key: this.#iceAttackAnimationName,
       frames: this.anims.generateFrameNumbers(this.#iceSpriteSheetAssetName, {
@@ -39,9 +40,6 @@ class MainScene extends Phaser.Scene {
       .setOrigin(0.5, 0)
       .setScale(2);
 
-    this.#icicle.once(Phaser.Animations.Events.ANIMATION_COMPLETE, () => {
-      console.log('animation completed');
-    });
     this.#icicle.once(
       Phaser.Animations.Events.ANIMATION_COMPLETE_KEY +
         this.#iceAttackAnimationName,
