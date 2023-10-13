@@ -9,6 +9,7 @@ For a detailed walkthrough, checkout my video on YouTube here:
 [<img src="https://i.ytimg.com/vi/2JqqOxJu9dE/hqdefault.jpg">](https://youtu.be/2JqqOxJu9dE "Mastering Phaser 3: Elevate Your Game with Custom Web Fonts!")
 
 Link to live demo:
+
 [Custom Fonts](https://devshareacademy.github.io/code-examples-from-my-video-content/phaser-3/custom-fonts/index.html)
 
 ## Credit

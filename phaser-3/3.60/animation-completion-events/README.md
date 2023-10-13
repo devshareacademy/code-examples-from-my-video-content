@@ -9,6 +9,7 @@ For a detailed walkthrough, checkout my video on YouTube here:
 [<img src="https://i.ytimg.com/vi/W-INH27SjKc/hqdefault.jpg">](https://youtu.be/W-INH27SjKc "Phaser 3 Mastery: How to Listen and React to Animation Completion Events")
 
 Link to live demo:
+
 [Animation Completion Event Demo](https://devshareacademy.github.io/code-examples-from-my-video-content/phaser-3/animation-completion-events/index.html)
 
 ## Credit

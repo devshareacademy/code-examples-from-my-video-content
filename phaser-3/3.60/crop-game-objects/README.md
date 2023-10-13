@@ -9,6 +9,7 @@ For a detailed walkthrough, checkout my video on YouTube here:
 TODO
 
 Link to live demo:
+
 [Crop Game Objects](https://devshareacademy.github.io/code-examples-from-my-video-content/phaser-3/crop-game-objects/index.html)
 
 ## Credit
