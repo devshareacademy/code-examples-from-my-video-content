@@ -75,7 +75,6 @@ class Scene2 extends Phaser.Scene {
         },
         targets: rectShape,
         onComplete: () => {
-          this.sceneTransitionComplete = true;
           mask.destroy();
           this.cameras.main.clearMask();
 
