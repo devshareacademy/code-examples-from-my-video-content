@@ -1,6 +1,6 @@
 # Canvas API - Nine Slice Demo
 
-![demo](docs/example.png)
+![demo](docs/example.gif)
 
 A quick demo of how you can use the nine slice scaling technique with the Canvas API when drawing your images to the HTML `<canvas>` element.
 

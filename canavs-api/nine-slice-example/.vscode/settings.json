@@ -7,5 +7,6 @@
   "prettier.singleQuote": true,
   "prettier.semi": true,
   "editor.formatOnSave": true,
-  "cSpell.words": ["bdragon", "kenneys", "tileset"]
+  "cSpell.words": ["bdragon", "kenneys", "tileset"],
+  "prettier.printWidth": 120
 }
