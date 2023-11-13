@@ -10,7 +10,7 @@ For a detailed walkthrough, checkout my video on YouTube here:
 
 Link to live demo:
 
-[Demo](https://devshareacademy.github.io/code-examples-from-my-video-content/canavs-api/nine-slice-demo/index.html)
+[Demo](https://devshareacademy.github.io/code-examples-from-my-video-content/canavs-api/nine-slice-example/index.html)
 
 ## Credit
 
