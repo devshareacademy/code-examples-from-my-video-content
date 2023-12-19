@@ -11,3 +11,10 @@ For a detailed walkthrough, checkout my video on YouTube here:
 Link to live demo:
 
 [Custom Nine Slice Demo](https://devshareacademy.github.io/code-examples-from-my-video-content/phaser-3/simple-scene-transitions/index.html)
+
+## Credit
+
+The images used in this demo were created by:
+
+- [bdragon1727](https://bdragon1727.itch.io/border-and-panels-menu-part-1)
+- [kenney](https://www.kenney.nl/assets/ui-pack-space-expansion)
