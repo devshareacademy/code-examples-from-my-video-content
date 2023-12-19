@@ -10,7 +10,7 @@ For a detailed walkthrough, checkout my video on YouTube here:
 
 Link to live demo:
 
-[Custom Nine Slice Demo](https://devshareacademy.github.io/code-examples-from-my-video-content/phaser-3/simple-scene-transitions/index.html)
+[Custom Nine Slice Demo](https://devshareacademy.github.io/code-examples-from-my-video-content/phaser-3/3.60/custom-nine-slice/index.html)
 
 ## Credit
 
