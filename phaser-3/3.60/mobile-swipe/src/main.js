@@ -10,7 +10,7 @@ class GameScene extends Phaser.Scene {
     const data = [0, 20, 84, 20, 84, 0, 120, 50, 84, 100, 84, 80, 0, 80];
     const arrow = this.add
       .polygon(this.scale.width / 2, this.scale.height / 2, data, 0x0000ff, 0.5)
-      .setScale(1.2, 0.75)
+      .setScale(1.2, 0.8)
       .setStrokeStyle(2, 0xffffff);
 
     const swipe = new Swipe(this, {
