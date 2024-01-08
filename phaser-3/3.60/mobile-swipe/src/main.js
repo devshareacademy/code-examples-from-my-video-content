@@ -41,6 +41,16 @@ class GameScene extends Phaser.Scene {
         });
       },
     });
+
+    this.add
+      .text(this.scale.width / 2, 550, 'Swipe the screen to move the arrow', {
+        align: 'center',
+        fontSize: '22px',
+        wordWrap: {
+          width: this.scale.width - 50,
+        },
+      })
+      .setOrigin(0.5);
   }
 }
 
