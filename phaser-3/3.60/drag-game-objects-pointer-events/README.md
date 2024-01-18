@@ -1,4 +1,4 @@
-# Phaser 3 - Draggable Game Objects Demo
+# Phaser 3 - Draggable Game Objects With Pointer Events Demo
 
 ![demo](docs/example.gif)
 

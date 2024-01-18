@@ -1,7 +1,7 @@
 import Phaser from './lib/phaser.js';
 
 /**
- * Uses the Phaser 3 built in drag events to allow a game object to be moved around a Phaser 3 Scene instance.
+ * Uses the Phaser 3 built in touch events to allow a game object to be moved around a Phaser 3 Scene instance.
  * The method will listen for the GameObject Destroy event and cleanup the various event listeners that
  * were registered.
  * @param {Phaser.GameObjects.Image | Phaser.GameObjects.Rectangle} gameObject
