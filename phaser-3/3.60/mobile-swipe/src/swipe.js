@@ -61,28 +61,38 @@ export class Swipe {
    * @returns {void}
    */
   #setupEvents() {
-    this.#scene.input.on(Phaser.Input.Events.POINTER_DOWN, this.#handlePointerDown, this);
-    this.#scene.input.on(Phaser.Input.Events.POINTER_UP, this.#handlePointerUp, this);
-    this.#scene.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
-      this.#scene.input.off(Phaser.Input.Events.POINTER_DOWN, this.#handlePointerDown, this);
-      this.#scene.input.off(Phaser.Input.Events.POINTER_UP, this.#handlePointerUp, this);
+    document.addEventListener(Phaser.Input.Events.POINTER_DOWN, (/** @type {PointerEvent} */ pointer) => {
+      console.log(pointer.x, pointer.y);
+      this.#handlePointerDown(pointer);
     });
+    document.addEventListener(Phaser.Input.Events.POINTER_UP, (/** @type {PointerEvent} */ pointer) => {
+      console.log(pointer.x, pointer.y);
+      this.#handlePointerUp(pointer);
+    });
+    // this.#scene.input.on(Phaser.Input.Events.POINTER_DOWN, this.#handlePointerDown, this);
+    // this.#scene.input.on(Phaser.Input.Events.POINTER_UP, this.#handlePointerUp, this);
+    // this.#scene.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
+    //   this.#scene.input.off(Phaser.Input.Events.POINTER_DOWN, this.#handlePointerDown, this);
+    //   this.#scene.input.off(Phaser.Input.Events.POINTER_UP, this.#handlePointerUp, this);
+    // });
   }
 
   /**
-   * @param {Phaser.Input.Pointer} pointer
+   * @param {PointerEvent} pointer
    * @returns {void}
    */
   #handlePointerDown(pointer) {
-    this.#lastPointerDownLocation = pointer.position.clone();
+    //this.#lastPointerDownLocation = pointer.position.clone();
+    this.#lastPointerDownLocation = new Phaser.Math.Vector2(pointer.x, pointer.y);
   }
 
   /**
-   * @param {Phaser.Input.Pointer} pointer
+   * @param {PointerEvent} pointer
    * @returns {void}
    */
   #handlePointerUp(pointer) {
-    this.#lastPointerUpLocation = pointer.position.clone();
+    //this.#lastPointerUpLocation = pointer.position.clone();
+    this.#lastPointerUpLocation = new Phaser.Math.Vector2(pointer.x, pointer.y);
     this.#handleSwipe();
     if (this.#swipeDirection !== DIRECTION.NONE && this.#config && this.#config.swipeDetectedCallback) {
       this.#config.swipeDetectedCallback(this.#swipeDirection);

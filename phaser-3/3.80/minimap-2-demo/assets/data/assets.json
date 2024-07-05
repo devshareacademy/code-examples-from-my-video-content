@@ -1,0 +1,38 @@
+[
+  {
+    "path": "assets/minimap",
+    "files": [
+      {
+        "type": "image",
+        "key": "background",
+        "url": "town.png"
+      },
+      {
+        "type": "image",
+        "key": "map",
+        "url": "minimap.png"
+      },
+      {
+        "type": "image",
+        "key": "questIcon",
+        "url": "tile056.png"
+      },
+      {
+        "type": "spritesheet",
+        "key": "characters",
+        "url": "bonus1_full.png",
+        "frameConfig": { "frameWidth": 26, "frameHeight": 36 }
+      }
+    ]
+  },
+  {
+    "path": "assets/data",
+    "files": [
+      {
+        "type": "json",
+        "key": "quests",
+        "url": "quests.json"
+      }
+    ]
+  }
+]
