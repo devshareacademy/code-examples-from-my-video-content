@@ -4,12 +4,13 @@ import { EventBusComponent } from './components/events/event-bus-component.js';
 import { KeyboardInputComponent } from './components/input/keyboard-input-component.js';
 import { GridMovementAnimationComponent } from './components/movement/grid-movement-animation-component.js';
 import { GRID_MOVEMENT_EVENTS, GridMovementComponent } from './components/movement/grid-movement-component.js';
+import { MAP_ICON_TYPE, MiniMapScene } from './minimap-scene.js';
 
 const SCALE_FACTOR = 2;
 
-export class CameraExampleScene extends Phaser.Scene {
+export class GameScene extends Phaser.Scene {
   constructor() {
-    super({ key: 'CameraExampleScene' });
+    super({ key: 'GameScene' });
   }
 
   preload() {
@@ -58,31 +59,47 @@ export class CameraExampleScene extends Phaser.Scene {
     //   console.log(player.x, player.y)
     // });
 
-    /* start of code for camera minimap */
-    // create a new background image that we will apply special effects to, this image will not be shown on the main camera
-    const mapBg = this.add.image(0, 0, 'background').setOrigin(0).setScale(2);
-    mapBg.postFX.addColorMatrix().grayscale(0.8);
-    // create a 2nd camera that will be a zoomed out version of the main camera (birds eye view)
-    const minimapCamera = this.cameras
-      .add(
-        this.scale.width - 230,
-        10,
-        this.scale.width * SCALE_FACTOR,
-        this.scale.height * SCALE_FACTOR,
-        false,
-        'minimap'
-      )
-      .setOrigin(0)
-      .setZoom(0.16);
-    // ignore any game objects we don't want visible on the 2nd camera
-    minimapCamera.ignore([player, mainBg]);
+    /* start of code for minimap */
+    /** @type {import('./minimap-scene.js').MiniMapSceneInitData} */
+    const dataToPass = {
+      mapIcons: [
+        {
+          x: player.x,
+          y: player.y,
+          iconType: MAP_ICON_TYPE.PLAYER,
+          id: 'player',
+        },
+        {
+          x: 568,
+          y: 348,
+          iconType: MAP_ICON_TYPE.QUEST,
+          id: 'quest1',
+        },
+      ],
+      worldHeight: this.scale.height * SCALE_FACTOR,
+      worldWidth: this.scale.width * SCALE_FACTOR,
+    };
+    this.scene.launch('MiniMapScene', dataToPass);
+    /** @type {MiniMapScene} */
+    // @ts-ignore
+    const miniMapScene = this.scene.get('MiniMapScene');
 
-    const playerIcon = this.add.circle(player.x, player.y, 20, 0xff0000, 1).setOrigin(0, -1);
     playerEventBusComponent.on(GRID_MOVEMENT_EVENTS.GRID_MOVEMENT_FINISHED, () => {
-      playerIcon.setPosition(player.x, player.y);
+      miniMapScene.updateIconPosition('player', player.x, player.y);
     });
-    this.cameras.main.ignore([playerIcon, mapBg]);
 
-    /* end of code for camera minimap */
+    const mKey = this.input.keyboard.addKey('m');
+    if (mKey) {
+      mKey.on(Phaser.Input.Keyboard.Events.DOWN, () => {
+        miniMapScene.toggleMap();
+      });
+    }
+    const qKey = this.input.keyboard.addKey('q');
+    if (qKey) {
+      qKey.once(Phaser.Input.Keyboard.Events.DOWN, () => {
+        miniMapScene.removeIcon('quest1');
+      });
+    }
+    /* end of code for minimap */
   }
 }

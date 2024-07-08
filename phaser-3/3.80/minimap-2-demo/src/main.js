@@ -1,6 +1,6 @@
-import { CameraExampleScene } from './camera-example-scene.js';
-import { ImageExampleScene } from './image-example-scene.js';
 import Phaser from './lib/phaser.js';
+import { GameScene } from './game-scene.js';
+import { MiniMapScene } from './minimap-scene.js';
 
 const gameConfig = {
   type: Phaser.WEBGL,
@@ -13,7 +13,7 @@ const gameConfig = {
     autoCenter: Phaser.Scale.CENTER_BOTH,
   },
   backgroundColor: '#5c5b5b',
-  scene: [CameraExampleScene, ImageExampleScene],
+  scene: [GameScene, MiniMapScene],
 };
 
 const game = new Phaser.Game(gameConfig);
