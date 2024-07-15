@@ -1,3 +1,5 @@
+import Phaser from './lib/phaser.js';
+
 /**
  * @typedef {keyof typeof MAP_ICON_TYPE} MapIconType
  */

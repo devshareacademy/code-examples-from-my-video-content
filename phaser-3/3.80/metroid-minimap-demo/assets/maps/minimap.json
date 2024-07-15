@@ -1,0 +1,44 @@
+{ "compressionlevel":-1,
+ "height":3,
+ "infinite":false,
+ "layers":[
+        {
+         "data":[9, 4, 4, 6, 4, 10,
+            0, 0, 0, 3, 0, 0,
+            0, 9, 4, 8, 4, 10],
+         "height":3,
+         "id":1,
+         "name":"map",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":6,
+         "x":0,
+         "y":0
+        }],
+ "nextlayerid":2,
+ "nextobjectid":1,
+ "orientation":"orthogonal",
+ "renderorder":"right-down",
+ "tiledversion":"1.10.0",
+ "tileheight":8,
+ "tilesets":[
+        {
+         "columns":11,
+         "firstgid":1,
+         "image":"metroid_example\/maps\/map-Sheet.png",
+         "imageheight":16,
+         "imagewidth":88,
+         "margin":0,
+         "name":"map-Sheet",
+         "spacing":0,
+         "tilecount":22,
+         "tileheight":8,
+         "tilewidth":8,
+         "transparentcolor":"#ff00ff"
+        }],
+ "tilewidth":8,
+ "type":"map",
+ "version":"1.10",
+ "width":6
+}
