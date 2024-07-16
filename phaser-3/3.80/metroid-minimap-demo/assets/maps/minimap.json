@@ -15,9 +15,117 @@
          "width":6,
          "x":0,
          "y":0
+        }, 
+        {
+         "data":[0, 0, 0, 0, 0, 26,
+            0, 0, 0, 0, 0, 0,
+            0, 26, 0, 0, 0, 26],
+         "height":3,
+         "id":4,
+         "name":"items",
+         "opacity":1,
+         "type":"tilelayer",
+         "visible":true,
+         "width":6,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":2,
+         "name":"doors",
+         "objects":[
+                {
+                 "gid":11,
+                 "height":8,
+                 "id":1,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"id",
+                         "type":"int",
+                         "value":0
+                        }],
+                 "rotation":0,
+                 "type":"Door",
+                 "visible":true,
+                 "width":8,
+                 "x":0,
+                 "y":8
+                }],
+         "opacity":0.73,
+         "type":"objectgroup",
+         "visible":false,
+         "x":0,
+         "y":0
+        }, 
+        {
+         "draworder":"topdown",
+         "id":3,
+         "name":"items",
+         "objects":[
+                {
+                 "gid":22,
+                 "height":8,
+                 "id":2,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"id",
+                         "type":"int",
+                         "value":0
+                        }],
+                 "rotation":0,
+                 "type":"Item",
+                 "visible":true,
+                 "width":8,
+                 "x":40,
+                 "y":8
+                }, 
+                {
+                 "gid":22,
+                 "height":8,
+                 "id":3,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"id",
+                         "type":"int",
+                         "value":1
+                        }],
+                 "rotation":0,
+                 "type":"Item",
+                 "visible":true,
+                 "width":8,
+                 "x":8,
+                 "y":24
+                }, 
+                {
+                 "gid":22,
+                 "height":8,
+                 "id":4,
+                 "name":"",
+                 "properties":[
+                        {
+                         "name":"id",
+                         "type":"int",
+                         "value":2
+                        }],
+                 "rotation":0,
+                 "type":"Item",
+                 "visible":true,
+                 "width":8,
+                 "x":40,
+                 "y":24
+                }],
+         "opacity":0.82,
+         "type":"objectgroup",
+         "visible":true,
+         "x":0,
+         "y":0
         }],
- "nextlayerid":2,
- "nextobjectid":1,
+ "nextlayerid":5,
+ "nextobjectid":5,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.10.0",
@@ -36,6 +144,19 @@
          "tileheight":8,
          "tilewidth":8,
          "transparentcolor":"#ff00ff"
+        }, 
+        {
+         "columns":2,
+         "firstgid":23,
+         "image":"metroid_example\/objects.png",
+         "imageheight":16,
+         "imagewidth":16,
+         "margin":0,
+         "name":"objects",
+         "spacing":0,
+         "tilecount":4,
+         "tileheight":8,
+         "tilewidth":8
         }],
  "tilewidth":8,
  "type":"map",

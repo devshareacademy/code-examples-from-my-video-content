@@ -10,6 +10,8 @@ export class GameScene extends Phaser.Scene {
   #middleBackgroundTileSprite;
   /** @type {{x:number;y:number;}} */
   #lastPlayerPosition;
+  /** @type {Phaser.GameObjects.Group} */
+  #itemGroup;
 
   constructor() {
     super({ key: 'GameScene' });
@@ -29,6 +31,7 @@ export class GameScene extends Phaser.Scene {
     // minimap
     this.load.image('minimapTileset', 'assets/maps/map-Sheet.png');
     this.load.tilemapTiledJSON('map', 'assets/maps/minimap.json');
+    this.load.image('icons', 'assets/maps/objects.png');
     // atlas sprites
     this.load.atlas('atlas', 'assets/atlas/atlas.png', 'assets/atlas/atlas.json');
     this.load.atlas('atlas-props', 'assets/atlas/atlas-props.png', 'assets/atlas/atlas-props.json');
@@ -40,12 +43,21 @@ export class GameScene extends Phaser.Scene {
   create() {
     this.#createBackgrounds();
     const tileObjects = this.#createTileMap();
+    this.#createItems(tileObjects.map.getObjectLayer('items'));
     this.#player = this.#createPlayer();
+    this.#player.setX(800);
     this.#lastPlayerPosition = { x: this.#player.x, y: this.#player.y };
     this.#decorWorld();
 
     // add collisions
     this.physics.add.collider(this.#player, tileObjects.layer);
+    this.physics.add.overlap(this.#player, this.#itemGroup, (player, item) => {
+      const items = this.registry.get('itemsPickedUp');
+      // @ts-ignore
+      items[item.name] = true;
+      this.registry.set('itemsPickedUp', items);
+      item.destroy();
+    });
     // update camera
     this.cameras.main.startFollow(this.#player, false, 0.1, 1, 0.1);
     this.cameras.main.setBounds(0, 0, tileObjects.map.widthInPixels, tileObjects.map.heightInPixels);
@@ -60,6 +72,12 @@ export class GameScene extends Phaser.Scene {
     mKey.on(Phaser.Input.Keyboard.Events.DOWN, () => {
       miniMapScene.toggleMap();
     });
+
+    const pKey = this.input.keyboard.addKey('p');
+    pKey.once(Phaser.Input.Keyboard.Events.DOWN, () => {
+      this.registry.set('mapPickedUp', true);
+    });
+    this.registry.set('mapPickedUp', false);
   }
 
   /**
@@ -111,7 +129,6 @@ export class GameScene extends Phaser.Scene {
    */
   #createTileMap() {
     const map = this.add.tilemap('level');
-    console.log(map);
     const tileset = map.addTilesetImage('tileset');
     const wallTileset = map.addTilesetImage('walls');
     map.createLayer('Tile Layer 2', wallTileset).setPosition(0, -16);
@@ -193,11 +210,10 @@ export class GameScene extends Phaser.Scene {
    * @returns {Phaser.Types.Physics.Arcade.SpriteWithDynamicBody}
    */
   #createPlayer() {
-    const player = this.physics.add.sprite(64, 70, 'atlas', 'player-idle-1');
+    const player = this.physics.add.sprite(64, 70, 'atlas', 'player-idle-1').setName('player');
     player.body.setGravityY(500);
     player.body.setSize(11, 40, true);
 
-    //var s = 10;
     this.anims.create({
       key: 'idle',
       frames: this.anims.generateFrameNames('atlas', {
@@ -270,5 +286,36 @@ export class GameScene extends Phaser.Scene {
 
   #addProp(x, y, item) {
     this.add.image(x * 16, y * 16, 'atlas-props', item).setOrigin(0);
+  }
+
+  /**
+   * @param {Phaser.Tilemaps.ObjectLayer } layer
+   */
+  #createItems(layer) {
+    this.anims.create({
+      key: 'item',
+      frames: this.anims.generateFrameNames('atlas', {
+        prefix: 'power-up-',
+        start: 1,
+        end: 7,
+      }),
+      repeat: -1,
+      frameRate: 10,
+    });
+
+    this.#itemGroup = this.add.group([]);
+    const itemsPickedUp = {};
+    layer.objects.forEach((object) => {
+      const id = object.properties[0].value;
+      const item = this.physics.add
+        .sprite(object.x, object.y - 16, 'atlas', 'power-up-1')
+        .setName(id)
+        .play('item')
+        .setGravityY(0);
+      item.body.setSize(14, 12);
+      this.#itemGroup.add(item);
+      itemsPickedUp[id] = false;
+    });
+    this.registry.set('itemsPickedUp', itemsPickedUp);
   }
 }

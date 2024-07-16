@@ -1,5 +1,7 @@
 Task List:
-  ☐ create player icon on map
-  ☐ create item icons on map
-  ☐ pickup items and update map
-  ☐ on main map, add item icons
+  ✔ create player icon on map @done(24-07-16 00:21)
+  ✔ create item icons on map @done(24-07-16 00:21)
+  ✔ pickup items and update map @done(24-07-16 00:21)
+  ✔ on main map, add item icons @done(24-07-16 00:21)
+  ✔ update map to turn blue as player moves @done(24-07-15 16:01)
+  ✔ update map to support not visible until player enables map @done(24-07-15 16:01)
