@@ -2,7 +2,7 @@
 
 ![demo](docs/example.gif)
 
-A quick demo of how you can use the built in events of Phaser 3 to know when an animation is completed, that way you can use that event to perform some additional game logic.
+A quick demo of how you can build a minimap feature in Phaser 3 by using the built in support for multiple cameras, and how we can show and hide game objects on each camera.
 
 For a detailed walkthrough, checkout my video on YouTube here:
 
