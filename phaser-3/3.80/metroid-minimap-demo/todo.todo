@@ -5,3 +5,34 @@ Task List:
   ✔ on main map, add item icons @done(24-07-16 00:21)
   ✔ update map to turn blue as player moves @done(24-07-15 16:01)
   ✔ update map to support not visible until player enables map @done(24-07-15 16:01)
+
+For the game, I think we do a live stream of converting the phaser 2 version of the game over to phaser 3.
+To prep for this, I should create a clean phaser 3 version to use as reference and as practice.
+This will create the task list for what is needed.
+
+Task List:
+  download project template for phaser 3 game
+  download the phaser 2 project for reference
+  update project config
+  load game assets
+  level setup
+    parallax background
+    background layer
+    actual level player collides with
+    enable collisions
+    add props
+  player setup
+    create player game object
+    add animations
+    handle input & move player
+    shoot weapon
+  add items
+    create pickup items in the level
+    add collisions and destroy items
+  add enemies
+    create various enemy types
+    add animations
+    add base ai
+    add collisions
+  add title screen
+  add credits scene
