@@ -6,7 +6,7 @@ A quick demo of how you can use the built in touch events of Phaser 3 to handle 
 
 For a detailed walkthrough, checkout my video on YouTube here:
 
-Coming soon...
+[<img src="https://i.ytimg.com/vi/nqLUfoO4TR0/hqdefault.jpg">](https://youtu.be/nqLUfoO4TR0 "Phaser 3 Swipe Wizardry: A Comprehensive Guide to Swipe Gestures in Phaser 3!")
 
 Link to live demo:
 
