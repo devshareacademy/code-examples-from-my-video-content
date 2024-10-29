@@ -2,11 +2,11 @@
 
 ![demo](docs/example.gif)
 
-TBD
+In this example, we take a look at how we can create really nice custom level transitions by using the built in Phaser 3 Geometry Mask objects.
 
 For a detailed walkthrough, checkout my video on YouTube here:
 
-Coming soon...
+[<img src="https://i.ytimg.com/vi/dRwGjVj29s0/hqdefault.jpg">](https://youtu.be/dRwGjVj29s0 "Phaser 3 Tutorial: Custom Level Transitions With Geometry Masks!")
 
 Link to live demo:
 
