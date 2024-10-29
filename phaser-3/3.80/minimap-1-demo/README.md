@@ -6,7 +6,7 @@ A quick demo of how you can build a minimap feature in Phaser 3 by using the bui
 
 For a detailed walkthrough, checkout my video on YouTube here:
 
-Coming soon...
+[<img src="https://i.ytimg.com/vi/E5R3op1NUnY/hqdefault.jpg">](https://youtu.be/E5R3op1NUnY "Phaser 3 Tutorial: How to create a minimap feature using a Phaser 3 Camera")
 
 Link to live demo:
 
