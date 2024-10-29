@@ -6,7 +6,7 @@ A quick demo of how you can use the nine slice scaling technique with the Canvas
 
 For a detailed walkthrough, checkout my video on YouTube here:
 
-[<img src="https://i.ytimg.com/vi/PJM8isAuDoI/hqdefault.jpg">](https://youtu.be/PJM8isAuDoI 'How to Draw, Scale, and Slice Images using the Canvas API')
+[<img src="https://i.ytimg.com/vi/cJdd2hectO8/hqdefault.jpg">](https://youtu.be/cJdd2hectO8 "Canvas Wizardry: Say Goodbye to Stretch with 9-Slice Scaling!")
 
 Link to live demo:
 
