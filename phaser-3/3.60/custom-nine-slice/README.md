@@ -6,7 +6,7 @@ A quick demo of how you can build your own custom nine slice scaling functionali
 
 For a detailed walkthrough, checkout my video on YouTube here:
 
-[<img src="https://i.ytimg.com/vi/jZtVciBkxjU/hqdefault.jpg">](https://youtu.be/jZtVciBkxjU 'Phaser 3 Mastery: Effortless Fade-In and Fade-Out Scene Transitions')
+[<img src="https://i.ytimg.com/vi/NIXDMdpLGMo/hqdefault.jpg">](https://youtu.be/NIXDMdpLGMo "Phaser 3 Nine-Slice Game Object: Say Goodbye to Image Distortions!")
 
 Link to live demo:
 
