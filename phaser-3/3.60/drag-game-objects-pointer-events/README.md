@@ -6,7 +6,7 @@ A quick demo of how you can use the built in touch events of Phaser 3 to allow y
 
 For a detailed walkthrough, checkout my video on YouTube here:
 
-Coming soon...
+[<img src="https://i.ytimg.com/vi/jWglIBp4usY/hqdefault.jpg">](https://youtu.be/jWglIBp4usY "Touch & Drag: Creating Draggable Objects in Phaser 3 With Touch Events!")
 
 Link to live demo:
 
