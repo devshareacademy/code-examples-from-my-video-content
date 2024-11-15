@@ -6,7 +6,7 @@ A quick demo of how you can easily use custom fonts in Phaser 3 by using the new
 
 For a detailed walkthrough, checkout my video on YouTube here:
 
-Coming soon...
+[<img src="https://i.ytimg.com/vi/cKe9JT2lW8w/hqdefault.jpg">](https://youtu.be/cKe9JT2lW8w "Phaser 3.87 Update: Custom Fonts Done Right!")
 
 Link to live demo:
 
